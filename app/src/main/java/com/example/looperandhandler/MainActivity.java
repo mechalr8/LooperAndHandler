@@ -9,8 +9,7 @@ import android.os.Message;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
-    private SimpleWorker worker;
+    private Worker worker;
     private TextView tvMessage;
     private Handler handler = new Handler(Looper.getMainLooper()){
         @Override
@@ -26,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         tvMessage = findViewById(R.id.tvMessage);
 
-        worker = new SimpleWorker();
+        worker = new Worker();
 
         worker.execute(() -> {
             try{
