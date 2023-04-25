@@ -5,7 +5,7 @@ import android.os.HandlerThread;
 
 public class Worker extends HandlerThread {
 
-    private Handler handler;
+    private final Handler handler;
     private static final String TAG = "Worker";
     public Worker() {
         super(TAG);

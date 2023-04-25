@@ -11,7 +11,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     private Worker worker;
     private TextView tvMessage;
-    private Handler handler = new Handler(Looper.getMainLooper()){
+    private final Handler handler = new Handler(Looper.getMainLooper()){
         @Override
         public void handleMessage(Message msg){
             super.handleMessage(msg);
