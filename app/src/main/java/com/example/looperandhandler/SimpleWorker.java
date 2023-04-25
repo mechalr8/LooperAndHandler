@@ -9,7 +9,13 @@ public class SimpleWorker extends Thread{
 
     private static final String TAG = "SimpleWorker";
     private final AtomicBoolean alive = new AtomicBoolean(true);
+    /*------------AtomicBoolean has methods that perform their compound operations atomically and
+    without having to use a synchronized block. On the other hand, volatile boolean can only perform
+    compound operations if done so within a synchronized block.------------*/
+
     private final ConcurrentLinkedDeque<Runnable> taskQueue = new ConcurrentLinkedDeque<>();
+    /*------------The ConcurrentLinkedDeque class in Java is a thread-safe implementation of the
+    Deque interface that uses a linked list to store its elements.------------*/
 
     public SimpleWorker(){
         super(TAG);
