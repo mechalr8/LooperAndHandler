@@ -8,8 +8,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class SimpleWorker extends Thread{
 
     private static final String TAG = "SimpleWorker";
-    private AtomicBoolean alive = new AtomicBoolean(true);
-    private ConcurrentLinkedDeque<Runnable> taskQueue = new ConcurrentLinkedDeque<>();
+    private final AtomicBoolean alive = new AtomicBoolean(true);
+    private final ConcurrentLinkedDeque<Runnable> taskQueue = new ConcurrentLinkedDeque<>();
 
     public SimpleWorker(){
         super(TAG);
